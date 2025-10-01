@@ -1,0 +1,229 @@
+:root {
+    color-scheme: light dark;
+    --bg: #f4f6fb;
+    --fg: #1a1d2b;
+    --accent: #2f6fed;
+    --accent-dark: #214fb3;
+    --border: #d8deeb;
+    --error: #d64545;
+    --warning: #f5a623;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-header,
+.page-footer {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.page-footer {
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+main {
+    margin: 2rem 0;
+}
+
+.generator {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(47, 111, 237, 0.08);
+}
+
+.form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alert {
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.alert ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.5rem;
+}
+
+.alert-error {
+    background: rgba(214, 69, 69, 0.1);
+    border: 1px solid rgba(214, 69, 69, 0.4);
+    color: #902626;
+}
+
+.alert-success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #2d6a32;
+}
+
+.alert-warning {
+    background: rgba(245, 166, 35, 0.1);
+    border: 1px solid rgba(245, 166, 35, 0.4);
+    color: #9a6400;
+}
+
+.result {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 1.5rem;
+}
+
+.qr-preview {
+    display: flex;
+    justify-content: center;
+}
+
+.qr-preview img {
+    width: min(320px, 100%);
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 1.5rem;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.qr-data textarea {
+    width: 100%;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+.info {
+    margin-top: 3rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 10px 30px rgba(47, 111, 237, 0.05);
+}
+
+.info ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+@media (max-width: 600px) {
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
