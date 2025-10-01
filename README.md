@@ -25,9 +25,13 @@ Diese Anwendung stellt einen QR-Code-Generator auf Basis von PHP bereit. Unterst
 
 4. (Optional) MySQL-Tabelle anlegen:
 
-   ```sql
-   SOURCE migrations/qr_requests.sql;
-   ```
+   * `public/config.example.php` nach `public/config.php` kopieren, Zugangsdaten eintragen und `db_enabled` auf `true` setzen.
+   * `install.php` im Browser aufrufen (z. B. `http://localhost:8000/install.php`) und auf **Installation starten** klicken.
+   * Alternativ kann die Migration manuell per SQL ausgeführt werden:
+
+     ```sql
+     SOURCE migrations/qr_requests.sql;
+     ```
 
 ## Nutzung
 
